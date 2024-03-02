@@ -10,8 +10,11 @@ import static java.util.Objects.isNull;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
+        Customer customer = new Customer();
+        Operation operation = new Operation();
+        Operation[] operations =new Operation[5];
+        Customer[] customers = new Customer[2];
+        int[][] statement;
         //ДЗ1
         System.out.println("Виталий");
         // ДЗ2
@@ -21,38 +24,28 @@ public class Main {
         String[] naznach = new String[5]; // назначение
         String[] namePayer = new String[5]; // плательщик
         LocalDate [] dataTranz = new LocalDate[5]; // дата платежа
-//        dataTranz[1]=LocalDate.parse("01.01.1900", DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-//        dataTranz[2]=LocalDate.parse("01.01.1900", DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-//        dataTranz[3] = LocalDate.parse("01.01.1900", DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-//        dataTranz[4] = LocalDate.parse("01.01.1900", DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-
         StringBuilder sb= new StringBuilder();
         Scanner scanner = new Scanner(System.in);
-//        System.out.println("Введите номер транзакции:");
-//        numberTrans = scanner.nextInt();
-//        System.out.println("Введите сумму транзакции:");
-//        sumTrans = scanner.nextFloat();
-//        System.out.println("Введите плательщика:");
-//        namePayer = scanner.next();
-//        System.out.println("Введите назначение транзакции:");
-//        naznach = scanner.next();
-//        System.out.println("Введите дату транзакции в формате dd.MM.yyyy:");
-//        String  dataStr = scanner.next().trim();
-//        dataTranz=LocalDate.parse(dataStr, DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-//        //System.out.println("Номер транзакции: "+NumberTrans+", плательщик: "+NamePayer+", сумма: "+SumTrans+", назначение платежа: "+Naznach);
-//        sb.append("Номер транзакции: ");
-//        sb.append(numberTrans);
-//        sb.append(", плательщик: ");
-//        sb.append(namePayer);
-//        sb.append(", назначение платежа: ");
-//        sb.append(naznach);
-//        sb.append(", сумма: ");
-//        sb.append(sumTrans);
-//        sb.append(", дату транзакции: ");
-//        sb.append(dataTranz);
-//        System.out.println(sb.toString());
-    // ДЗ3 и 4
+    // ДЗ3 4, 5
         int i=0;
+        outWhileClient:
+        while (true){
+            System.out.println("Вы хотете завести клиента? Введите \"да\" или \"нет\"");
+            String input = scanner.next();
+            switch (input) {
+                case "нет":
+                    break outWhileClient;
+                case "да":
+                    System.out.println("Введите клиента:");
+                    customers[] = customer(scanner.next());
+
+                    namePayer[i] = scanner.next();
+                    Customer()
+            }
+
+        }
+
+        i=0;
         outWhile:
         while (true){
             System.out.println("Вы хотете завести тарнзакцию? Введите \"да\" или \"нет\"");
@@ -61,12 +54,14 @@ public class Main {
                 case "нет" :
                     break outWhile;
                 case "да":
-                    System.out.println("Введите сумму транзакции:");
-                    sumTrans[i] = scanner.nextFloat();
                     System.out.println("Введите плательщика:");
                     namePayer[i] = scanner.next();
+
+                    System.out.println("Введите сумму транзакции:");
+                    operation.setSumTrans(scanner.nextFloat());
+                    sumTrans[i] = operation.getSumTrans();
                     System.out.println("Введите назначение транзакции:");
-                    naznach[i] = scanner.next();
+                    naznach[i] = operation.setNaznach(scanner.next());
                     System.out.println("Введите дату транзакции в формате dd.MM.yyyy:");
                     String  dataStr = scanner.next().trim();
                     LocalDate d=LocalDate.parse(dataStr, DateTimeFormatter.ofPattern("dd.MM.yyyy"));
