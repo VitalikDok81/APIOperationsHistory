@@ -12,8 +12,8 @@ public class Main {
     public static void main(String[] args) {
         Customer customer = new Customer();
         Operation operation = new Operation();
-        Operation[] operations =new Operation[5];
-        Customer[] customers = new Customer[2];
+        Operation[] operations =new Operation[];
+        Customer[] customers = new Customer[];
         int[][] statement;
         //ДЗ1
         System.out.println("Виталий");
@@ -37,15 +37,13 @@ public class Main {
                     break outWhileClient;
                 case "да":
                     System.out.println("Введите клиента:");
-                    customers[] = customer(scanner.next());
-
-                    namePayer[i] = scanner.next();
-                    Customer()
+                    customers[i] =new Customer();
+                    //namePayer[i] = scanner.next();
+                    i++;
             }
-
         }
 
-        i=0;
+        int j=0;
         outWhile:
         while (true){
             System.out.println("Вы хотете завести тарнзакцию? Введите \"да\" или \"нет\"");
@@ -61,7 +59,7 @@ public class Main {
                     operation.setSumTrans(scanner.nextFloat());
                     sumTrans[i] = operation.getSumTrans();
                     System.out.println("Введите назначение транзакции:");
-                    naznach[i] = operation.setNaznach(scanner.next());
+                    //naznach[i] = operation.setNaznach(scanner.next());
                     System.out.println("Введите дату транзакции в формате dd.MM.yyyy:");
                     String  dataStr = scanner.next().trim();
                     LocalDate d=LocalDate.parse(dataStr, DateTimeFormatter.ofPattern("dd.MM.yyyy"));
